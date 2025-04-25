@@ -13,3 +13,11 @@ import { Button } from "@/components/ui/button";
 //     </div>
 //   );
 // }
+
+
+export default function Home(){
+
+  return(
+    <Button variant={"destructive"} size={"lg"}>Click me</Button>
+  )
+}
