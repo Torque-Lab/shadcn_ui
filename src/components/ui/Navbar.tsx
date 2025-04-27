@@ -11,6 +11,7 @@ import {
   SquareMenu,
   SubscriptIcon,
   Sun,
+  ToggleLeftIcon,
   User,
 } from "lucide-react";
 import Link from "next/link";
@@ -24,12 +25,19 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "./button";
 import { useTheme } from "next-themes";
+import { SidebarTrigger, useSidebar } from "./sidebar";
 
 export default function Navbar() {
+  const { toggleSidebar } = useSidebar();
+
   return (
     <nav className="p-4 flex items-center justify-between">
       {/* collaspseButton left */}
-      Collpase
+      {/* <SidebarTrigger/> */}
+
+      <Button variant={"outline"} className="ml-0 " onClick={toggleSidebar}>
+        <ToggleLeftIcon />
+      </Button>
       {/* Right */}
       <div className="flex items-center gap-4">
         <Link href="/">Dashborad</Link>
@@ -40,6 +48,7 @@ export default function Navbar() {
             <Avatar>
               <div className="h-12 w-12">
                 <AvatarImage src="https://github.com/shadcn.png" />
+                {/* read more */}
                 <AvatarFallback>CN</AvatarFallback>
               </div>
             </Avatar>
